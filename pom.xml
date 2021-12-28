@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.mule.weave</groupId>
+    <groupId>${exchange.orgId}</groupId>
     <artifactId>analytics-module</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${revision}</version>
 
 
     <packaging>dw-library</packaging>
@@ -14,8 +14,10 @@
     <name>data-weave-analytics</name>
 
     <properties>
+        <revision>0.2.0</revision>
         <weave.version>2.4.0-20211228</weave.version>
         <wtf.version>1.0.7-SNAPSHOT</wtf.version>
+        <exchange.orgId>1e0dbdda-5cda-4968-a636-0980a2c42cb1</exchange.orgId>
     </properties>
 
     <dependencies>
@@ -69,16 +71,42 @@
         <plugins>
             <plugin>
                 <groupId>org.mule.weave</groupId>
-                <artifactId>weave-maven-plugin</artifactId>
-                <version>2.5.0-SNAPSHOT</version>
+                <artifactId>data-weave-maven-plugin</artifactId>
+                <version>0.0.8-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
                     <coverage>
-                        <enabled>false</enabled>
-                        <!-- <coverageFormat>sonar</coverageFormat> -->
+                        <enabled>true</enabled>
+                        <coverageFormat>sonar</coverageFormat>
                     </coverage>
+                    <moduleDocsPath>${project.basedir}/README.md</moduleDocsPath>
                 </configuration>
             </plugin>
+            <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+				<version>1.1.0</version>
+				<configuration>
+					<updatePomFile>true</updatePomFile>
+					<flattenMode>resolveCiFriendliesOnly</flattenMode>
+				</configuration>
+				<executions>
+					<execution>
+						<id>flatten</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>flatten</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>flatten.clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 
@@ -92,7 +120,20 @@
             <id>mule-snapshots</id>
             <url>https://repository-master.mulesoft.org/nexus/content/repositories/snapshots</url>
         </repository>
+        <repository>
+			<id>exchange</id>
+			<name>Devx Exchange</name>
+			<url>https://maven.devx.anypoint.mulesoft.com/api/v3/maven</url>
+			<layout>default</layout>
+		</repository>
     </repositories>
+    <distributionManagement>
+		<repository>
+			<id>exchange</id>
+			<name>Devx Exchange</name>
+			<url>https://maven.devx.anypoint.mulesoft.com/api/v3/organizations/${exchange.orgId}/maven</url>
+		</repository>
+	</distributionManagement>
     <pluginRepositories>
         <pluginRepository>
             <id>mule-releases</id>
