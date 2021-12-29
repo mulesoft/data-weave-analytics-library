@@ -7,6 +7,6 @@ fun summary(values: Array<Number>): Object = {
     modes: modes(values),
     median: median(values),
     stdev: stdev(values),
-    quartiles: quantiles(values, 4)
+    quartiles: 4 quantilesOf values
 }
 

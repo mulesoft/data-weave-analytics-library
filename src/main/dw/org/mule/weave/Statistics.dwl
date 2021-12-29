@@ -109,7 +109,7 @@ fun mean(values: Array<Number>): Number | Null =
 *
 */
 fun median(values: Array<Number>): Number | Null =
-  quantiles(values, 2)[0]
+  quantilesOf(2, values)[0]
 
 /** The `frequencies` function returns the number of occurrences of each
 * distinct element on `values`.
@@ -245,7 +245,7 @@ fun modes<T>(values: Array<T>): Array<T> = do {
   freq filter ((item, index) -> item.occurrences == maxOcc) map ((item, index) -> item.value)
 }
 
-/** The `quantiles` function returns the points that separate the
+/** The `quantilesOf` function returns the points that separate the
 * values in `n` parts of equal size.
 *
 * If the middle point of two points is taken, it'll be taken doing
@@ -262,7 +262,7 @@ fun modes<T>(values: Array<T>): Array<T> = do {
 *
 * === Example
 *
-* This example shows how the `quantiles` behaves under an arbitrary array.
+* This example shows how the `quantilesOf` behaves under an arbitrary array.
 *
 * ==== Source
 *
@@ -273,7 +273,7 @@ fun modes<T>(values: Array<T>): Array<T> = do {
 *
 * import * from org::mule::weave::Statistics
 * ---
-* quantiles([1, 2, 3, 4, 5], 3)
+* 3 quantilesOf [1, 2, 3, 4, 5]
 *
 * ----
 *
@@ -285,7 +285,7 @@ fun modes<T>(values: Array<T>): Array<T> = do {
 * ----
 *
 */
-fun quantiles(values: Array<Number>, n: Number): Array<Number> | Null  =
+fun quantilesOf(n: Number, values: Array<Number>): Array<Number> | Null  =
   if (n < 2 or sizeOf(values) < (n - 1))
     null
   else
