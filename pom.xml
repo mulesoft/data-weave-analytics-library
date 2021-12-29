@@ -14,7 +14,7 @@
     <name>data-weave-analytics</name>
 
     <properties>
-        <revision>0.2.0</revision>
+        <revision>1.0.0-SNAPSHOT</revision>
         <weave.version>2.4.0-20211228</weave.version>
         <wtf.version>1.0.7-SNAPSHOT</wtf.version>
         <exchange.orgId>1e0dbdda-5cda-4968-a636-0980a2c42cb1</exchange.orgId>
