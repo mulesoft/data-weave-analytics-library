@@ -1,6 +1,6 @@
 %dw 2.0
 
-import * from org::mule::weave::Statistics
+import * from dw::analytics::Statistics
 
 fun summary(values: Array<Number>): Object = {
     mean: mean(values),

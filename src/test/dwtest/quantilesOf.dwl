@@ -2,7 +2,7 @@
 
 output application/json
 
-import * from org::mule::weave::Statistics
+import * from dw::analytics::Statistics
 ---
 
 {

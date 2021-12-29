@@ -2,7 +2,7 @@
 import * from dw::test::Tests
 import * from dw::test::Asserts
 
-import modes from org::mule::weave::Statistics
+import modes from dw::analytics::Statistics
 ---
 "Test modes" describedBy [
     "Should return empty array on empty array" in do {

@@ -1,5 +1,5 @@
 %dw 2.0
-import median from org::mule::weave::Statistics
+import median from dw::analytics::Statistics
 
 import * from dw::test::Tests
 import * from dw::test::Asserts

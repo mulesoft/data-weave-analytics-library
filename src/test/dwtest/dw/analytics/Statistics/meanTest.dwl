@@ -3,7 +3,7 @@
 import * from dw::test::Tests
 import * from dw::test::Asserts
 
-import mean from org::mule::weave::Statistics
+import mean from dw::analytics::Statistics
 ---
 "Test mean" describedBy [
     "Returns null on empty" in do {

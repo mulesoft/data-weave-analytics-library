@@ -2,7 +2,7 @@
 import * from dw::test::Tests
 import * from dw::test::Asserts
 
-import quantilesOf from org::mule::weave::Statistics
+import quantilesOf from dw::analytics::Statistics
 ---
 "Test quantilesOf" describedBy [
     "On empty array it should return null" in do {

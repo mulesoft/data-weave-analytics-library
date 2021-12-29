@@ -27,7 +27,7 @@
 * %dw 2.0
 * output application/json
 *
-* import mean from org::mule::weave::Statistics
+* import mean from dw::analytics::Statistics
 * ---
 * mean([1, 2, 3, 4, 5])
 *
@@ -51,7 +51,7 @@
 * %dw 2.0
 * output application/json
 *
-* import mean from org::mule::weave::Statistics
+* import mean from dw::analytics::Statistics
 * ---
 * mean([]) default "N/A"
 *
@@ -99,7 +99,7 @@ fun mean(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import median from org::mule::weave::Statistics
+* import median from dw::analytics::Statistics
 * ---
 * median([3, 1, 4])
 *
@@ -143,7 +143,7 @@ fun median(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import frequencies from org::mule::weave::Statistics 
+* import frequencies from dw::analytics::Statistics 
 * ---
 * frequencies([1, 2, 11, 1, 1, 2])
 *
@@ -200,7 +200,7 @@ fun frequencies(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import mode from org::mule::weave::Statistics
+* import mode from dw::analytics::Statistics
 * ---
 * mode(["hello", "world", "data", "weave", "data"])
 *
@@ -244,7 +244,7 @@ fun mode(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import mode from org::mule::weave::Statistics
+* import mode from dw::analytics::Statistics
 * ---
 * modes(["hello", "world", "data", "weave", "data", "hello"])
 *
@@ -297,7 +297,7 @@ fun modes(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import * from org::mule::weave::Statistics
+* import * from dw::analytics::Statistics
 * ---
 * 3 quantilesOf [1, 2, 3, 4, 5]
 *
@@ -356,7 +356,7 @@ fun quantilesOf(n: Any, values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import variance from org::mule::weave::Statistics
+* import variance from dw::analytics::Statistics
 * ---
 * variance([1, 2, 3, 2])
 *
@@ -407,7 +407,7 @@ fun variance(values: Null): Null = null
 * %dw 2.0
 * output application/json
 * 
-* import stdev from org::mule::weave::Statistics
+* import stdev from dw::analytics::Statistics
 * ---
 * stdev([1, 2, 3, 2])
 *

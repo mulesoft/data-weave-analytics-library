@@ -2,7 +2,7 @@
 import * from dw::test::Tests
 import * from dw::test::Asserts
 
-import frequencies from org::mule::weave::Statistics
+import frequencies from dw::analytics::Statistics
 ---
 "Test frequencies" describedBy [
     "Empty array returns empty array" in do {
