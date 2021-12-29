@@ -78,6 +78,7 @@
                     </coverage>
                     <moduleDocsPath>${project.basedir}/README.md</moduleDocsPath>
                     <dwTestFolder>${project.basedir}/src/test/dwtest</dwTestFolder>
+                    <dwTestResources>${project.basedir}/src/test/dwtest</dwTestResources>
                 </configuration>
             </plugin>
             <plugin>
