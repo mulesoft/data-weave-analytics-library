@@ -14,4 +14,7 @@ import modes from org::mule::weave::Statistics
     "Should return the first most common element if there are many" in do {
         modes([2, 1, 1, 2]) must equalTo([2, 1])
     },
+    "Over null input should return null" in do {
+        modes(null) must beNull()
+    },
 ]

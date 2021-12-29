@@ -18,4 +18,7 @@ import frequencies from org::mule::weave::Statistics
             {value: 11, occurrences: 1}
         ])
     },
+    "Over null input should return null" in do {
+        frequencies(null) must beNull()
+    },
 ]

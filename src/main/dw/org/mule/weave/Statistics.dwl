@@ -71,6 +71,11 @@ fun mean(values: Array<Number>): Number | Null =
   else
     sum(values) / sizeOf(values)
 
+/**
+* Helper function that enables `mean` to work with a `null` value.
+*/
+fun mean(values: Null): Null = null
+
 /** The `median` function returns the point on the medium of the population.
 *
 * If the length of the array is even, the average of the two medium points is returned.
@@ -110,6 +115,11 @@ fun mean(values: Array<Number>): Number | Null =
 */
 fun median(values: Array<Number>): Number | Null =
   quantilesOf(2, values)[0]
+
+/**
+* Helper function that enables `median` to work with a `null` value.
+*/
+fun median(values: Null): Null = null
 
 /** The `frequencies` function returns the number of occurrences of each
 * distinct element on `values`.
@@ -160,6 +170,11 @@ fun frequencies<T>(values: Array<T>): Array<{value: T, occurrences: Number}> = d
   })
 }
 
+/**
+* Helper function that enables `frequencies` to work with a `null` value.
+*/
+fun frequencies(values: Null): Null = null
+
 /** The `mode` function returns the most common value on the array
 * of values.
 *
@@ -201,6 +216,11 @@ fun frequencies<T>(values: Array<T>): Array<{value: T, occurrences: Number}> = d
 */
 fun mode<T>(values: Array<T>): T | Null =
   modes(values)[0]
+
+/**
+* Helper function that enables `mode` to work with a `null` value.
+*/
+fun mode(values: Null): Null = null
 
 /** The `modes` function returns the values with the most
 * number of occurrences.
@@ -244,6 +264,12 @@ fun modes<T>(values: Array<T>): Array<T> = do {
   ---
   freq filter ((item, index) -> item.occurrences == maxOcc) map ((item, index) -> item.value)
 }
+
+/**
+* Helper function that enables `modes` to work with a `null` value.
+*/
+fun modes(values: Null): Null = null
+
 
 /** The `quantilesOf` function returns the points that separate the
 * values in `n` parts of equal size.
@@ -302,6 +328,12 @@ fun quantilesOf(n: Number, values: Array<Number>): Array<Number> | Null  =
       )
     }
 
+
+/**
+* Helper function that enables `quantilesOf` to work with a `null` value.
+*/
+fun quantilesOf(n: Any, values: Null): Null = null
+
 /** The `variance` function returns the variance of the given set of
 * values.
 *
@@ -345,6 +377,11 @@ fun variance(values: Array<Number>): Number | Null = do {
   mean(deviations)
 }
 
+/**
+* Helper function that enables `variance` to work with a `null` value.
+*/
+fun variance(values: Null): Null = null
+
 /** The `stdev` function returns the standard deviation of the
 * given set of values.
 *
@@ -386,3 +423,8 @@ fun variance(values: Array<Number>): Number | Null = do {
 */
 fun stdev(values: Array<Number>): Number | Null =
   variance(values) then ((previousResult) -> sqrt(previousResult))
+
+/**
+* Helper function that enables `stdev` to work with a `null` value.
+*/
+fun stdev(values: Null): Null = null

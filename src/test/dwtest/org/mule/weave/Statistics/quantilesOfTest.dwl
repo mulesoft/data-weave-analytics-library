@@ -20,4 +20,7 @@ import quantilesOf from org::mule::weave::Statistics
     "It should work on n = sizeOf(array) + 1" in do {
         quantilesOf(3, [1, 2]) must equalTo([1, 2])
     },
+    "Over null input should return null" in do {
+        quantilesOf(true, null) must beNull()
+    },
 ]

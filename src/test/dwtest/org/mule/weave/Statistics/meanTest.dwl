@@ -15,4 +15,7 @@ import mean from org::mule::weave::Statistics
     "Many elements returns the mean" in do {
         mean([1, 2, 3, 4, 5]) must equalTo(3)
     },
+    "Over null input should return null" in do {
+        mean(null) must beNull()
+    },
 ]
