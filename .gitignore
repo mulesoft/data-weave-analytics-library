@@ -1,3 +1,22 @@
+# Maven
 target/
-.java-version
+maven-archiver/
 .flattened-pom.xml
+
+# Eclipse files
+.classpath
+.project
+.settings
+/workspace/
+
+# IntelliJ Idea files
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# Mac
+.DS_Store
+
+# jenv
+.java-version
