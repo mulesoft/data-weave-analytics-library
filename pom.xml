@@ -74,7 +74,7 @@
                 <configuration>
                     <coverage>
                         <enabled>true</enabled>
-                        <coverageFormat>sonar</coverageFormat>
+                        <format>sonar</format>
                     </coverage>
                     <moduleDocsPath>${project.basedir}/README.md</moduleDocsPath>
                     <dwTestFolder>${project.basedir}/src/test/dwtest</dwTestFolder>
