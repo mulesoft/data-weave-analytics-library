@@ -79,7 +79,6 @@
                         <coverageFormat>sonar</coverageFormat>
                     </tests>
                     <docs>
-                        <favicon>${project.basedir}/src/main/resources/favicon/parrot.jpg</favicon>
                         <homePage>${project.basedir}/README.md</homePage>
                     </docs>
                 </configuration>
