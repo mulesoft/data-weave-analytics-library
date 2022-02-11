@@ -7,7 +7,7 @@
     <groupId>${exchange.orgId}</groupId>
     <artifactId>analytics-module</artifactId>
     <version>${revision}</version>
-
+    <description>DataWeave Analytics Module</description>
 
     <packaging>dw-library</packaging>
 
@@ -72,13 +72,16 @@
                 <version>0.0.8-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <coverage>
-                        <enabled>true</enabled>
-                        <format>sonar</format>
-                    </coverage>
-                    <moduleDocsPath>${project.basedir}/README.md</moduleDocsPath>
                     <dwTestFolder>${project.basedir}/src/test/dwtest</dwTestFolder>
                     <dwTestResources>${project.basedir}/src/test/dwtest</dwTestResources>
+                    <tests>
+                        <coverageEnabled>true</coverageEnabled>
+                        <coverageFormat>sonar</coverageFormat>
+                    </tests>
+                    <docs>
+                        <favicon>${project.basedir}/src/main/resources/favicon/parrot.jpg</favicon>
+                        <homePage>${project.basedir}/README.md</homePage>
+                    </docs>
                 </configuration>
             </plugin>
             <plugin>
