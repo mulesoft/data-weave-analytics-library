@@ -4,5 +4,4 @@ enableSlackSuccessNotifications : true
 enableSlackFailedTestsNotifications : true
 enableAllureTestReportStage : false
 enableReleaseStage : false
-mavenSettingsXmlId : "data-weave-maven-settings"
 junitTestResults: "**/target/data-weave-test-reports/TEST-*.xml"
