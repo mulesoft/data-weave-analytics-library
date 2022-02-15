@@ -14,10 +14,10 @@
     <name>data-weave-analytics</name>
 
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
+        <revision>0.1.0-SNAPSHOT</revision>
         <weave.version>2.4.0-20211228</weave.version>
         <wtf.version>1.0.7-SNAPSHOT</wtf.version>
-        <exchange.orgId>1e0dbdda-5cda-4968-a636-0980a2c42cb1</exchange.orgId>
+        <exchange.orgId>68ef9520-24e9-4cf2-b2f5-620025690913</exchange.orgId>
 
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
         <sonar.sources>src/main/dw,./pom.xml</sonar.sources>
@@ -137,9 +137,9 @@
     </repositories>
     <distributionManagement>
 		<repository>
-			<id>exchange</id>
-			<name>Devx Exchange</name>
-			<url>https://maven.devx.anypoint.mulesoft.com/api/v3/organizations/${exchange.orgId}/maven</url>
+			<id>exchange-maven-facade-qax</id>
+			<name>QAX Exchange</name>
+			<url>https://maven.qax.anypoint.mulesoft.com/api/v1/organizations/${exchange.orgId}/maven</url>
 		</repository>
 	</distributionManagement>
     <pluginRepositories>
