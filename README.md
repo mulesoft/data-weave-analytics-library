@@ -1,9 +1,9 @@
-# DataWeave Analytics Module
+# DataWeave Analytics Library
 
-The DataWeave Analytics module provides a collection of simple functions
+The DataWeave Analytics library provides a collection of simple functions
 intended to perform data analysis over datasets.
 DataWeave, supporting multiple formats, and with data transformation in mind, is a
-perfect tool for quickly analyzing datasets, this module intends to fill the gap with
+perfect tool for quickly analyzing datasets, this library intends to fill the gap with
 some commonly used functionalities.
 
 ## Summaries

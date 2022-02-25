@@ -5,13 +5,13 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>${exchange.orgId}</groupId>
-    <artifactId>analytics-module</artifactId>
+    <artifactId>data-weave-analytics-library</artifactId>
     <version>${revision}</version>
-    <description>DataWeave Analytics Module</description>
+    <description>DataWeave Analytics Library</description>
 
     <packaging>dw-library</packaging>
 
-    <name>data-weave-analytics</name>
+    <name>DataWeave Analytics Library</name>
 
     <properties>
         <revision>0.1.0-SNAPSHOT</revision>
