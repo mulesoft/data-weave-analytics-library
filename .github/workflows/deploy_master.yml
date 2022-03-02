@@ -1,4 +1,4 @@
-name: Test DataWeave Analytics Module
+name: Deploy DataWeave Analytics Module to Exchange
 on:
   push:
     branches:
