@@ -9,7 +9,7 @@ on:
 
 
 jobs:
-  BUILD_EXTENSION:
+  DEPLOY_EXTENSION:
     runs-on: ubuntu-latest
     environment: devx
     steps:
