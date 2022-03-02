@@ -17,7 +17,7 @@
         <revision>0.1.0-SNAPSHOT</revision>
         <data.weave.version>2.4.0-20211228</data.weave.version>
         <data.weave.testing.framework.version>1.0.7-SNAPSHOT</data.weave.testing.framework.version>
-        <exchange.orgId>68ef9520-24e9-4cf2-b2f5-620025690913</exchange.orgId>
+        <exchange.orgId>1e0dbdda-5cda-4968-a636-0980a2c42cb1</exchange.orgId>
 
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
         <sonar.sources>src/main/dw,./pom.xml</sonar.sources>
@@ -129,17 +129,16 @@
             <url>https://repository-master.mulesoft.org/nexus/content/repositories/snapshots</url>
         </repository>
         <repository>
-			<id>exchange</id>
-			<name>Devx Exchange</name>
+			<id>exchange-devx-coco</id>
+			<name>DEVX Exchange</name>
 			<url>https://maven.devx.anypoint.mulesoft.com/api/v3/maven</url>
-			<layout>default</layout>
 		</repository>
     </repositories>
     <distributionManagement>
-		<repository>
-			<id>exchange-maven-facade-qax</id>
-			<name>QAX Exchange</name>
-			<url>https://maven.qax.anypoint.mulesoft.com/api/v1/organizations/${exchange.orgId}/maven</url>
+        <repository>
+			<id>exchange-devx-coco</id>
+			<name>DEVX Exchange</name>
+			<url>https://maven.devx.anypoint.mulesoft.com/api/v3/organizations/${exchange.orgId}/maven</url>
 		</repository>
 	</distributionManagement>
     <pluginRepositories>
