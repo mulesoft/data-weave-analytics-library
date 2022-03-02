@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - 
+      - feature/W-10742798
   pull_request:
     branches: [ master ]
 
