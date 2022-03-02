@@ -1,0 +1,41 @@
+name: Test DataWeave Analytics Module
+on:
+  push:
+    branches:
+      - master
+      - 
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  BUILD_EXTENSION:
+    runs-on: ubuntu-latest
+    environment: devx
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        cache: 'maven'
+    - name: Compile
+      run: mvn --batch-mode compile
+    - name: Run Tests
+      run: mvn --batch-mode test
+    
+    - name: Set up Exchange DEVX
+      uses: actions/setup-java@v2
+      with: # running setup-java again overwrites the settings.xml
+        java-version: '8'
+        distribution: 'adopt'
+        cache: 'maven'
+        server-id: exchange-devx-coco # Value of the distributionManagement/repository/id field of the pom.xml
+        server-username: EXCHANGE_USERNAME # env variable for username in deploy
+        server-password: EXCHANGE_PASSWORD # env variable for token in deploy
+    - name: Publish to Exchange DEVX
+      run: mvn deploy
+      env:
+        EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
+        EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
