@@ -3,5 +3,6 @@ slackChannel : data-weave-bot
 enableSlackSuccessNotifications : true
 enableSlackFailedTestsNotifications : true
 enableAllureTestReportStage : false
+enableMavenDeployStage : false
 enableReleaseStage : false
 junitTestResults: "**/target/data-weave-test-reports/TEST-*.xml"
