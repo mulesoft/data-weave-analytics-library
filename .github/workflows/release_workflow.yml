@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/test.yml
   # deploy_qax:
   #   needs: compile_test
-  #   enviroment: qax
+  #   environment: qax
   #   steps:
   #     - uses: ./.github/workflows/deploy.yml
   #       with:
@@ -22,7 +22,7 @@ jobs:
   deploy_devx:
     # needs: deploy_qax
     needs: compile_test
-    enviroment: devx
+    environment: devx
     steps:
       - uses: ./.github/workflows/deploy.yml
         with:
