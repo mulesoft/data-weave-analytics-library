@@ -26,12 +26,14 @@ jobs:
       with: # running setup-java again overwrites the settings.xml
         java-version: '8'
         distribution: 'adopt'
-        cache: 'maven'
+        # cache: 'maven'
         server-id: ${{ inputs.server-id }} # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: EXCHANGE_USERNAME # env variable for username in deploy
         server-password: EXCHANGE_PASSWORD # env variable for token in deploy
     - name: Publish to Exchange
-      run: mvn deploy -P ${{ inputs.mvn-profile }} -DskipTests -Dexchange.orgId=${{ inputs.exchange-org-id }}
+      run: |
+        echo "$EXCHANGE_USERNAME"
+        mvn deploy -P ${{ inputs.mvn-profile }} -DskipTests -Dexchange.orgId=${{ inputs.exchange-org-id }}
       env:
         EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
         EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
