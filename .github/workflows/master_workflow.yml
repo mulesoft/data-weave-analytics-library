@@ -15,3 +15,7 @@ jobs:
       mvn-profile: devx
       exchange-org-id: 1e0dbdda-5cda-4968-a636-0980a2c42cb1
       environment: qax
+    secrets:
+      EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
+      EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
+      
