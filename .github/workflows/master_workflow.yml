@@ -1,4 +1,4 @@
-name: Continous Deployment
+name: Continous Deployment To Exchange QAX
 on:
   push:
     branches:
