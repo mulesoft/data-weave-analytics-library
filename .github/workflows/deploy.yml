@@ -1,4 +1,4 @@
-name: Deploy DataWeave Analytics Module to Exchange
+name: Deploy DataWeave Analytics Library to Exchange
 on:
   workflow_call:
     inputs:
@@ -11,15 +11,14 @@ on:
       exchange-org-id:
         required: true
         type: string
-    secrets:
-      exchange-username:
+      environment:
         required: true
-      exchange-password:
-        required: true
+        type: string
 
 jobs:
   DEPLOY_EXTENSION:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up settings for Exchange
@@ -34,5 +33,5 @@ jobs:
     - name: Publish to Exchange
       run: mvn deploy -P ${{ inputs.mvn-profile }} -DskipTests -Dexchange.orgId=${{ inputs.exchange-org-id }}
       env:
-        EXCHANGE_USERNAME: ${{ secrets.exchange-username }}
-        EXCHANGE_PASSWORD: ${{ secrets.exchange-password }}
+        EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
+        EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
