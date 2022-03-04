@@ -1,0 +1,46 @@
+name: Continous Deployment
+on:
+  push:
+    branches:
+      - 'release/**'
+
+
+jobs:
+  compile_test:
+    uses: ./.github/workflows/test.yml
+  # deploy_qax:
+  #   needs: compile_test
+  #   enviroment: qax
+  #   steps:
+  #     - uses: ./.github/workflows/deploy.yml
+  #       with:
+  #         server-id: exchange-qax-coco
+  #         mvn-profile: qax
+  #       secrets:
+  #         exchange-username: ${{ secrets.EXCHANGE_USERNAME }}
+  #         exchange-password: ${{ secrets.EXCHANGE_PASSWORD }}
+  deploy_devx:
+    # needs: deploy_qax
+    needs: compile_test
+    enviroment: devx
+    steps:
+      - uses: ./.github/workflows/deploy.yml
+        with:
+          server-id: exchange-devx-coco
+          mvn-profile: devx
+          exchange-org-id: 1e0dbdda-5cda-4968-a636-0980a2c42cb1
+        secrets:
+          exchange-username: ${{ secrets.EXCHANGE_USERNAME }}
+          exchange-password: ${{ secrets.EXCHANGE_PASSWORD }}
+  tag:
+    name: "Tag Release"
+    needs: deploy_devx
+    steps:
+      - name: Set version var
+        id: version
+        run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+      - name: Create and push tag
+        run: |
+          git tag -a "v${{ steps.version.outputs.version }}" -m "Release ${{ steps.version.outputs.version }}"
+
+          git push origin "v${{ steps.version.outputs.version }}"

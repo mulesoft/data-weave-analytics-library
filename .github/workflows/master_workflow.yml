@@ -1,0 +1,21 @@
+name: Continous Deployment
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile_test:
+    uses: ./.github/workflows/test.yml
+  deploy_qax:
+    needs: compile_test
+    enviroment: qax
+    steps:
+      - uses: ./.github/workflows/deploy.yml
+        with:
+          server-id: exchange-devx-coco # QAX is not working
+          mvn-profile: devx
+          exchange-org-id: 1e0dbdda-5cda-4968-a636-0980a2c42cb1
+        secrets:
+          exchange-username: ${{ secrets.EXCHANGE_USERNAME }}
+          exchange-password: ${{ secrets.EXCHANGE_PASSWORD }}
