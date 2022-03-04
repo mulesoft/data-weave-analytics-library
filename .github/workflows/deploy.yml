@@ -1,0 +1,38 @@
+name: Deploy DataWeave Analytics Module to Exchange
+on:
+  workflow_call:
+    inputs:
+      server-id:
+        required: true
+        type: string
+      mvn-profile:
+        required: true
+        type: string
+      exchange-org-id:
+        required: true
+        type: string
+    secrets:
+      exchange-username:
+        required: true
+      exchange-password:
+        required: true
+
+jobs:
+  DEPLOY_EXTENSION:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up settings for Exchange
+      uses: actions/setup-java@v2
+      with: # running setup-java again overwrites the settings.xml
+        java-version: '8'
+        distribution: 'adopt'
+        cache: 'maven'
+        server-id: ${{ inputs.server-id }} # Value of the distributionManagement/repository/id field of the pom.xml
+        server-username: EXCHANGE_USERNAME # env variable for username in deploy
+        server-password: EXCHANGE_PASSWORD # env variable for token in deploy
+    - name: Publish to Exchange
+      run: mvn deploy -P ${{ inputs.mvn-profile }} -DskipTests -Dexchange.orgId=${{ inputs.exchange-org-id }}
+      env:
+        EXCHANGE_USERNAME: ${{ secrets.exchange-username }}
+        EXCHANGE_PASSWORD: ${{ secrets.exchange-password }}
