@@ -2,17 +2,17 @@
 
 The DataWeave Analytics library provides a collection of simple functions
 intended to perform data analysis over datasets.
-DataWeave, supporting multiple formats, and with data transformation in mind, is a
-perfect tool for quickly analyzing datasets, this library intends to fill the gap with
+DataWeave, which supports data transformations in multiple formats, is a
+fast analyzer for datasets. This library fills a gap in
 some commonly used functionalities.
 
 ## Summaries
 
 The `summary` function under `org::mule::weave::summaries::Common` provides a summary
 of a dataset of numerical values. The `CSVSummary` and `JsonSummary` mappings directly go
-from csv or json files, respectively, and produce a summary of the values in them.
+from CSV or JSON files, respectively, and produce a summary of the values in them.
 
-For example, feeding the following csv file:
+For example, assume the following CSV input:
 
 
 ```csv
@@ -23,7 +23,7 @@ id,time,age
 4,444,44
 ```
 
-to the `CSVSummary` mapping, would produce:
+The`CSVSummary` mapping produces the following JSON output from the CSV input:
 
 ```json
 {
@@ -78,5 +78,4 @@ to the `CSVSummary` mapping, would produce:
 }
 ```
 
-Where you can see that, for each column of the csv file, a summary of its values
-is presented.
+Notice that the results provide a summary of the values of each column in the CSV file.
