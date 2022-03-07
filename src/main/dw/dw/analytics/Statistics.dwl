@@ -289,7 +289,7 @@ fun modes(values: Null): Null = null
 * |===
 * | Name | Type | Description
 * | `values` | `Array<Number&#62;` | Array of numeric values to evaluate.
-* | `n` | `Number` | Number.
+* | `n` | `Number` | The desired number of quantiles.
 * |===
 *
 * === Example
