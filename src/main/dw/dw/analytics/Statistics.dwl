@@ -1,11 +1,12 @@
 /**
-* This module provides a basic set of functionalities to analyze
-* datasets of values, numeric or not.
+* This module provides basic functionality for analyzing
+* datasets of numeric and non-numeric values.
 */
 %dw 2.0
 
 
-/** The mean function returns the mean of an array of numbers,
+/** 
+* Returns the mean of an array of numbers,
 * or `null` if the array is empty.
 *
 * === Parameters
@@ -13,12 +14,12 @@
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | 
+* | `values` | `Array<Number&#62`; | Array of numeric or null values.
 * |===
 *
 * === Example
 *
-* This example shows how the `mean` behaves over an array with numbers.
+* This example shows how `mean` behaves with an array of numbers.
 *
 * ==== Source
 *
@@ -42,7 +43,7 @@
 *
 * === Example
 *
-* This example shows how the `mean` behaves under an empty array.
+* This example shows how `mean` behaves with an empty array.
 *
 * ==== Source
 *
@@ -76,21 +77,22 @@ fun mean(values: Array<Number>): Number | Null =
 */
 fun mean(values: Null): Null = null
 
-/** The `median` function returns the point on the medium of the population.
+/** 
+* Returns the median value of an array.
 *
-* If the length of the array is even, the average of the two medium points is returned.
+* If the length of the array is even, returns the average of the two median values.
 *
 * === Parameters
 *
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | 
+* | `values` | `Array<Number&#62;` | Array of numeric or null values.
 * |===
 *
 * === Example
 *
-* This example shows how the `median` behaves under different inputs.
+* This example shows how `median` behaves.
 *
 * ==== Source
 *
@@ -121,20 +123,21 @@ fun median(values: Array<Number>): Number | Null =
 */
 fun median(values: Null): Null = null
 
-/** The `frequencies` function returns the number of occurrences of each
-* distinct element on `values`.
+/** 
+* Returns the number of occurrences of each
+* distinct element in an array.
 *
 * === Parameters
 *
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<T&#62; | 
+* | `values` | `Array<T&#62;` | The array of values to evaluate.
 * |===
 *
 * === Example
 *
-* This example shows how the `frequencies` behaves under an array of numbers.
+* This example shows how `frequencies` behaves with an array of numbers.
 *
 * ==== Source
 *
@@ -175,23 +178,24 @@ fun frequencies<T>(values: Array<T>): Array<{value: T, occurrences: Number}> = d
 */
 fun frequencies(values: Null): Null = null
 
-/** The `mode` function returns the most common value on the array
+/** 
+* Returns the most common value in the array
 * of values.
 *
-* If there are more than one values with the most number of
-* occurrences, the first one will be returned.
+* If more than one value has the most number of
+* occurrences, the first value is returned.
 *
 * === Parameters
 *
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<T&#62; | 
+* | values | Array<T&#62; | Array of values to evaluate.
 * |===
 *
 * === Example
 *
-* This example shows how the `mode` behaves under an arbitrary array.
+* This example shows how `mode` behaves with an arbitrary array.
 *
 * ==== Source
 *
@@ -222,7 +226,8 @@ fun mode<T>(values: Array<T>): T | Null =
 */
 fun mode(values: Null): Null = null
 
-/** The `modes` function returns the values with the most
+/** 
+* Returns the values with the most
 * number of occurrences.
 *
 * === Parameters
@@ -230,12 +235,12 @@ fun mode(values: Null): Null = null
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<T&#62; | 
+* | `values` | `Array<T&#62;` | Array of values to evaluate.
 * |===
 *
 * === Example
 *
-* This example shows how the `modes` behaves under an arbitrary array.
+* This example shows how `modes` behaves with an arbitrary array.
 *
 * ==== Source
 *
@@ -271,24 +276,25 @@ fun modes<T>(values: Array<T>): Array<T> = do {
 fun modes(values: Null): Null = null
 
 
-/** The `quantilesOf` function returns the points that separate the
+/** 
+* Returns the points that separate the
 * values in `n` parts of equal size.
 *
-* If the middle point of two points is taken, it'll be taken doing
-* the average between both points.
+* If the middle point of two points is taken, the function returns the 
+* average of both points.
 *
 * === Parameters
 *
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | 
-* | n | Number | 
+* | `values` | `Array<Number&#62;` | Array of numeric values to evaluate.
+* | `n` | `Number` | The desired number of quantiles.
 * |===
 *
 * === Example
 *
-* This example shows how the `quantilesOf` behaves under an arbitrary array.
+* This example shows how the `quantilesOf` behaves with an arbitrary array.
 *
 * ==== Source
 *
@@ -334,7 +340,8 @@ fun quantilesOf(n: Number, values: Array<Number>): Array<Number> | Null  =
 */
 fun quantilesOf(n: Any, values: Null): Null = null
 
-/** The `variance` function returns the variance of the given set of
+/** 
+* Returns the variance of the given set of
 * values.
 *
 * === Parameters
@@ -342,12 +349,12 @@ fun quantilesOf(n: Any, values: Null): Null = null
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | 
+* | `values` | `Array<Number&#62;` | Array of numbers to evaluate.
 * |===
 *
 * === Example
 *
-* This example shows how the `variance` behaves under an arbitrary array.
+* This example shows how the `variance` behaves with an arbitrary array.
 *
 * ==== Source
 *
@@ -382,7 +389,8 @@ fun variance(values: Array<Number>): Number | Null = do {
 */
 fun variance(values: Null): Null = null
 
-/** The `stdev` function returns the standard deviation of the
+/** 
+* Returns the standard deviation of the
 * given set of values.
 *
 * The standard deviation is defined as the square root
@@ -393,12 +401,12 @@ fun variance(values: Null): Null = null
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | 
+* |  `values` | `Array<Number&#62;` | Array of numbers to evaluate.
 * |===
 *
 * === Example
 *
-* This example shows how the `stdev` behaves under an arbitrary array.
+* This example shows how `stdev` behaves with an arbitrary array.
 *
 * ==== Source
 *
