@@ -3,7 +3,7 @@
 The DataWeave Analytics library provides a collection of simple functions
 intended to perform data analysis over datasets.
 DataWeave, which supports data transformations in multiple formats, is a
-quickly analyzes datasets. This library fills a gap in
+fast analyzer for datasets. This library fills a gap in
 some commonly used functionalities.
 
 ## Summaries
