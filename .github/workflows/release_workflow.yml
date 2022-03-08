@@ -48,6 +48,6 @@ jobs:
         run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
       - name: Create and push tag
         run: |
-          git tag -a "v${{ steps.version.outputs.version }}" -m "Release ${{ steps.version.outputs.version }}"
+          git tag "v${{ steps.version.outputs.version }}"
 
           git push origin "v${{ steps.version.outputs.version }}"
