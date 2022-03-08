@@ -29,7 +29,7 @@ jobs:
           git checkout -b "release/${{ steps.version.outputs.version }}"
           git add pom.xml
           git commit -m "Remove SNAPSHOT pre release"
-          git push origin
+          git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
   update_patch:
     name: "Update Patch on master"
     runs-on: ubuntu-latest
@@ -62,7 +62,7 @@ jobs:
           git checkout -b "bump/${{ steps.nextVersion.outputs.version }}"
           git add pom.xml
           git commit -m "Bump Patch version"
-          git push origin
+          git push --set-upstream origin "bump/${{ steps.nextVersion.outputs.version }}"
 
           gh pr create -B master -f -H "bump/${{ steps.nextVersion.outputs.version }}"
         env:
