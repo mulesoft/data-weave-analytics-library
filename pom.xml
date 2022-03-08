@@ -14,7 +14,7 @@
     <name>DataWeave Analytics Library</name>
 
     <properties>
-        <revision>0.1.0-SNAPSHOT</revision>
+        <revision>0.1.0</revision>
         <data.weave.version>2.4.0-20211228</data.weave.version>
         <data.weave.testing.framework.version>1.0.7-SNAPSHOT</data.weave.testing.framework.version>
         <exchange.orgId>dummy-org-id</exchange.orgId>
