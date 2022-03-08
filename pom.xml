@@ -133,10 +133,6 @@
         <activation>
             <activeByDefault>true</activeByDefault>
         </activation>
-        <!-- <groupId>${exchange.orgId}</groupId> -->
-        <!-- <properties>
-            <exchange.orgId>d4e2bceb-baae-484c-92f3-3cc272256c7f</exchange.orgId>
-        </properties> -->
         <repositories>
             <repository>
                 <id>exchange-qax-coco</id>
@@ -154,10 +150,6 @@
         </profile>
         <profile>
         <id>devx</id>
-        <!-- <groupId>${exchange.orgId}</groupId> -->
-        <!-- <properties>
-            <exchange.orgId>1e0dbdda-5cda-4968-a636-0980a2c42cb1</exchange.orgId>
-        </properties> -->
         <repositories>
             <repository>
                 <id>exchange-devx-coco</id>
@@ -170,6 +162,23 @@
                 <id>exchange-devx-coco</id>
                 <name>DEVX Exchange</name>
                 <url>https://maven.devx.anypoint.mulesoft.com/api/v3/organizations/${exchange.orgId}/maven</url>
+            </repository>
+        </distributionManagement>
+        </profile>
+        <profile>
+        <id>prod-us</id>
+        <repositories>
+            <repository>
+                <id>exchange-prod-coco</id>
+                <name>PROD Exchange</name>
+                <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+            </repository>
+        </repositories>
+        <distributionManagement>
+            <repository>
+                <id>exchange-prod-coco</id>
+                <name>PROD Exchange</name>
+                <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${exchange.orgId}/maven</url>
             </repository>
         </distributionManagement>
         </profile>

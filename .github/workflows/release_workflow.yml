@@ -1,4 +1,4 @@
-name: Continous Deployment To Exchange Prod
+name: Release branches workflow
 on:
   push:
     branches:
@@ -8,26 +8,25 @@ on:
 jobs:
   compile_test:
     uses: ./.github/workflows/test.yml
-  # deploy_qax:
-  #   needs: compile_test
-  #   environment: qax
-  #   steps:
-  #     - uses: ./.github/workflows/deploy.yml
-  #       with:
-  #         server-id: exchange-qax-coco
-  #         mvn-profile: qax
-  #       secrets:
-  #         exchange-username: ${{ secrets.EXCHANGE_USERNAME }}
-  #         exchange-password: ${{ secrets.EXCHANGE_PASSWORD }}
-  deploy_devx:
-    # needs: deploy_qax
+  deploy_qax:
     needs: compile_test
     uses: ./.github/workflows/deploy.yml
     with:
-      server-id: exchange-devx-coco
-      mvn-profile: devx
-      exchange-org-id: 1e0dbdda-5cda-4968-a636-0980a2c42cb1
-      environment: devx
+      server-id: exchange-qax-coco
+      mvn-profile: qax
+      exchange-org-id: d4e2bceb-baae-484c-92f3-3cc272256c7f
+      environment: qax
+    secrets:
+      EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
+      EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
+  deploy_prod_us:
+    needs: deploy_qax
+    uses: ./.github/workflows/deploy.yml
+    with:
+      server-id: exchange-prod-coco
+      mvn-profile: prod-us
+      exchange-org-id: ab149102-a60a-4839-8842-201941a3e117
+      environment: prod-us
     secrets:
       EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
       EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}

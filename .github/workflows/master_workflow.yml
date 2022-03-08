@@ -1,4 +1,4 @@
-name: Continous Deployment To Exchange QAX
+name: Master branch workflow
 on:
   push:
     branches:
@@ -11,9 +11,9 @@ jobs:
     needs: compile_test
     uses: ./.github/workflows/deploy.yml
     with:
-      server-id: exchange-devx-coco # QAX is not working
-      mvn-profile: devx
-      exchange-org-id: 1e0dbdda-5cda-4968-a636-0980a2c42cb1
+      server-id: exchange-qax-coco
+      mvn-profile: qax
+      exchange-org-id: d4e2bceb-baae-484c-92f3-3cc272256c7f
       environment: qax
     secrets:
       EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
