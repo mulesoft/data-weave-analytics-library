@@ -1,4 +1,4 @@
-name: Deploy DataWeave Analytics Library to Exchange
+name: Deploy DataWeave Library to Exchange
 on:
   workflow_call:
     inputs:
@@ -23,14 +23,14 @@ on:
 
 jobs:
   DEPLOY_EXTENSION:
-    name: "Deploy Extension"
+    name: "Deploy Library"
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up settings for Exchange
       uses: actions/setup-java@v2
-      with: # running setup-java again overwrites the settings.xml
+      with:
         java-version: '8'
         distribution: 'adopt'
         cache: 'maven'

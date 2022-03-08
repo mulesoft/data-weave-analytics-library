@@ -1,4 +1,4 @@
-name: Create next release
+name: Create Next Release
 on: 
   workflow_dispatch:
 
@@ -14,12 +14,12 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
           cache: 'maven'
-      - name: Set non snapshot version var
+      - name: Get version to release
         id: version
         run: |
           mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec
           echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | cut -d '-' -f1)
-      - name: Commit and create branch
+      - name: Create release branch
         run: |
           sed -i "s/<revision>.*<\/revision>/<revision>${{ steps.version.outputs.version }}<\/revision>/" pom.xml
 
@@ -28,10 +28,10 @@ jobs:
 
           git checkout -b "release/${{ steps.version.outputs.version }}"
           git add pom.xml
-          git commit -m "Remove SNAPSHOT pre release"
+          git commit -m "Pin release version"
           git push --set-upstream origin "release/${{ steps.version.outputs.version }}"
   update_patch:
-    name: "Update Patch on master"
+    name: "Bump patch on master"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -48,11 +48,11 @@ jobs:
           echo ::set-output name=versionMajor::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | cut -d '-' -f1 | cut -d '.' -f1)
           echo ::set-output name=versionMinor::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | cut -d '-' -f1 | cut -d '.' -f2)
           echo ::set-output name=versionPatch::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | cut -d '-' -f1 | cut -d '.' -f3)
-      - name: Get Next version
+      - name: Get Next patch version
         id: nextVersion
         run: |
           echo ::set-output name=version::${{ steps.version.outputs.versionMajor }}.${{ steps.version.outputs.versionMinor }}.$((${{ steps.version.outputs.versionPatch }}+1))-SNAPSHOT
-      - name: Commit and create branch
+      - name: Create bump PR
         run: |
           sed -i "s/<revision>.*<\/revision>/<revision>${{ steps.nextVersion.outputs.version }}<\/revision>/" pom.xml
 

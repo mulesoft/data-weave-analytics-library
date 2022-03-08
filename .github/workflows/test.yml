@@ -1,4 +1,4 @@
-name: Test Library
+name: Compile and Test Library
 on:
   pull_request:
     branches: [ master ]
