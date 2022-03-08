@@ -33,7 +33,7 @@ jobs:
   tag:
     name: "Tag Release"
     runs-on: ubuntu-latest
-    needs: deploy_devx
+    needs: deploy_prod_us
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
