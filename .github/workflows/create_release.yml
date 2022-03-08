@@ -26,7 +26,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-          git branch "release/${{ steps.version.outputs.version }}"
+          git checkout -b "release/${{ steps.version.outputs.version }}"
           git add pom.xml
           git commit -m "Remove SNAPSHOT pre release"
           git push origin
@@ -59,7 +59,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-          git branch "bump/${{ steps.nextVersion.outputs.version }}"
+          git checkout -b "bump/${{ steps.nextVersion.outputs.version }}"
           git add pom.xml
           git commit -m "Bump Patch version"
           git push origin
