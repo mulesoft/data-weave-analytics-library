@@ -14,7 +14,7 @@
     <name>DataWeave Analytics Library</name>
 
     <properties>
-        <revision>0.1.4-SNAPSHOT</revision>
+        <revision>0.1.5-SNAPSHOT</revision>
         <data.weave.version>2.4.0-20220221</data.weave.version>
         <data.weave.testing.framework.version>1.1.0</data.weave.testing.framework.version>
         <data.weave.maven.plugin.version>0.1.0</data.weave.maven.plugin.version>
