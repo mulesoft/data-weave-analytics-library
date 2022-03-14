@@ -2,7 +2,7 @@
 
 output application/json
 
-import * from dw::analytics::Statistics
+import * from analytics::Statistics
 ---
 
 {

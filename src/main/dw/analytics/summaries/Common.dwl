@@ -1,6 +1,6 @@
 %dw 2.0
 
-import * from dw::analytics::Statistics
+import * from analytics::Statistics
 
 fun summary(values: Array<Number>): Object = {
     mean: mean(values),

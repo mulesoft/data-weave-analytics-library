@@ -28,7 +28,7 @@
 * %dw 2.0
 * output application/json
 *
-* import mean from dw::analytics::Statistics
+* import mean from analytics::Statistics
 * ---
 * mean([1, 2, 3, 4, 5])
 *
@@ -52,7 +52,7 @@
 * %dw 2.0
 * output application/json
 *
-* import mean from dw::analytics::Statistics
+* import mean from analytics::Statistics
 * ---
 * mean([]) default "N/A"
 *
@@ -101,7 +101,7 @@ fun mean(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import median from dw::analytics::Statistics
+* import median from analytics::Statistics
 * ---
 * median([3, 1, 4])
 *
@@ -146,7 +146,7 @@ fun median(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import frequencies from dw::analytics::Statistics 
+* import frequencies from analytics::Statistics
 * ---
 * frequencies([1, 2, 11, 1, 1, 2])
 *
@@ -204,7 +204,7 @@ fun frequencies(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import mode from dw::analytics::Statistics
+* import mode from analytics::Statistics
 * ---
 * mode(["hello", "world", "data", "weave", "data"])
 *
@@ -249,7 +249,7 @@ fun mode(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import mode from dw::analytics::Statistics
+* import mode from analytics::Statistics
 * ---
 * modes(["hello", "world", "data", "weave", "data", "hello"])
 *
@@ -303,7 +303,7 @@ fun modes(values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import * from dw::analytics::Statistics
+* import * from analytics::Statistics
 * ---
 * 3 quantilesOf [1, 2, 3, 4, 5]
 *
@@ -363,7 +363,7 @@ fun quantilesOf(n: Any, values: Null): Null = null
 * %dw 2.0
 * output application/json
 *
-* import variance from dw::analytics::Statistics
+* import variance from analytics::Statistics
 * ---
 * variance([1, 2, 3, 2])
 *
@@ -415,7 +415,7 @@ fun variance(values: Null): Null = null
 * %dw 2.0
 * output application/json
 * 
-* import stdev from dw::analytics::Statistics
+* import stdev from analytics::Statistics
 * ---
 * stdev([1, 2, 3, 2])
 *
