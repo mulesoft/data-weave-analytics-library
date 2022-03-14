@@ -79,3 +79,13 @@ The`CSVSummary` mapping produces the following JSON output from the CSV input:
 ```
 
 Notice that the results provide a summary of the values of each column in the CSV file.
+
+## Contributions Welcome
+
+Before creating a pull request review the following:
+
+* [LICENSE](LICENSE.txt)
+* [SECURITY](SECURITY.md)
+* [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)
+
+When you submit your pull request, you are asked to sign a contributor license agreement (CLA) if we don't have one on file for you.
