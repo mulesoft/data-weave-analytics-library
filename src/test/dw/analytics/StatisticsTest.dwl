@@ -2,7 +2,7 @@
 import * from dw::test::Tests
 import * from dw::test::Asserts
 
-import * from dw::analytics::Statistics
+import * from analytics::Statistics
 ---
 "Statistics Test" describedBy  [
     "Test frequencies" describedBy [
