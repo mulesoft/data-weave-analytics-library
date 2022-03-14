@@ -1,5 +1,5 @@
 %dw 2.0
-import * from dw::analytics::summaries::Common
+import * from analytics::summaries::Common
 
 input payload csv
 output application/json
