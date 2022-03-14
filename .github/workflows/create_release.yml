@@ -78,7 +78,7 @@ jobs:
 
           export SHA=$( git rev-parse "bump/${{ steps.nextVersion.outputs.version }}":pom.xml )
           export CONTENT=$( base64 -i pom.xml )
-          gh api --method PUT /repos/${{ env.GITHUB_REPOSITORY }}/contents/pom.xml \
+          gh api --method PUT /repos/${{ github.repository }}/contents/pom.xml \
             --field message="Bump Patch version" \
             --field content="$CONTENT" \
             --field encoding="base64" \
