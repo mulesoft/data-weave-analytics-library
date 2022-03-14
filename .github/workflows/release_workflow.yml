@@ -12,9 +12,9 @@ jobs:
     needs: compile_test
     uses: ./.github/workflows/deploy.yml
     with:
-      server-id: exchange-qax-coco
+      server-id: exchange-qax
       mvn-profile: qax
-      exchange-org-id: d4e2bceb-baae-484c-92f3-3cc272256c7f
+      exchange-org-id: 68ef9520-24e9-4cf2-b2f5-620025690913
       environment: qax
     secrets:
       EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
