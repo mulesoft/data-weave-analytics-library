@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.mule.weave</groupId>
                 <artifactId>data-weave-maven-plugin</artifactId>
-                <version>0.0.8-SNAPSHOT</version>
+                <version>0.2.0-SNAPSHOT</version>
                 <extensions>true</extensions>
                 <configuration>
                     <tests>
