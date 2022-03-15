@@ -5,7 +5,7 @@ import * from dw::test::Asserts
 ---
 "Test org::mule::weave::summaries::JsonSummary" describedBy [
     "Assert default" in do {
-        evalPath("analytics/summaries/JsonSummary.dwl", inputsOf("analytics/summaries/JsonSummary/default"),"application/json") must
-                  equalTo(outputOf("analytics/summaries/JsonSummary/default"))
+        evalPath("analytics/summaries/JsonSummary.dwl", inputsFrom("analytics/summaries/JsonSummary/default"),"application/json") must
+                  equalTo(outputFrom("analytics/summaries/JsonSummary/default"))
     }
 ]
