@@ -5,8 +5,8 @@ import * from dw::test::Asserts
 ---
 "Test quantilesOf" describedBy [
     "Assert Big Examples" in do {
-        runMapping("IntegrationTests/quantilesOf.dwl", inputsOf("IntegrationTests/quantilesOf/Big Examples"),"application/json") must
-                  equalTo(outputOf("IntegrationTests/quantilesOf/Big Examples"))
+        evalPath("IntegrationTests/quantilesOf.dwl", inputsFrom("IntegrationTests/quantilesOf/Big Examples"),"application/json") must
+                  equalTo(outputFrom("IntegrationTests/quantilesOf/Big Examples"))
     },
 ]
 
