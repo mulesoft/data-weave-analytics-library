@@ -1,3 +1,5 @@
+/** Transform a CSV file into a summary of some important statistics.
+ */
 %dw 2.0
 import * from analytics::summaries::Common
 

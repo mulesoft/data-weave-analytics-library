@@ -6,14 +6,12 @@ DataWeave, which supports data transformations in multiple formats, is a
 fast analyzer for datasets. This library fills a gap in
 some commonly used functionalities.
 
-## Summaries
+## Overview
 
-The `summary` function under `org::mule::weave::summaries::Common` provides a summary
-of a dataset of numerical values. The `CSVSummary` and `JsonSummary` mappings directly go
-from CSV or JSON files, respectively, and produce a summary of the values in them.
+The `CSVSummary` on `analytics::summaries` consumes a CSV file and produces
+a summary of the values on the different columns present in it.
 
 For example, assume the following CSV input:
-
 
 ```csv
 id,time,age
@@ -23,7 +21,7 @@ id,time,age
 4,444,44
 ```
 
-The`CSVSummary` mapping produces the following JSON output from the CSV input:
+The `CSVSummary` mapping produces the following JSON output from the CSV input:
 
 ```json
 {
@@ -78,14 +76,18 @@ The`CSVSummary` mapping produces the following JSON output from the CSV input:
 }
 ```
 
-Notice that the results provide a summary of the values of each column in the CSV file.
+Notice that the result provides a summary consisting of the mean, the modes, the median,
+the standard deviation, and the quartiles of the values of each column in the CSV file.
 
 ## Contributions Welcome
 
+Contributions to this project can be made through Pull Requests and Issues on the
+[GitHub Repository](https://github.com/mulesoft/data-weave-analytics-library).
+
 Before creating a pull request review the following:
 
-* [LICENSE](LICENSE.txt)
-* [SECURITY](SECURITY.md)
-* [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)
+* [LICENSE](https://github.com/mulesoft/data-weave-analytics-library/blob/master/LICENSE.txt)
+* [SECURITY](https://github.com/mulesoft/data-weave-analytics-library/blob/master/SECURITY.md)
+* [CODE_OF_CONDUCT](https://github.com/mulesoft/data-weave-analytics-library/blob/master/CODE_OF_CONDUCT.md)
 
 When you submit your pull request, you are asked to sign a contributor license agreement (CLA) if we don't have one on file for you.
