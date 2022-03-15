@@ -7,7 +7,7 @@
     <groupId>${exchange.orgId}</groupId>
     <artifactId>data-weave-analytics-library</artifactId>
     <version>${revision}</version>
-    <description>DataWeave Analytics Library</description>
+    <description>Collection of DataWeave functions for data analysis</description>
 
     <packaging>dw-library</packaging>
 
@@ -86,6 +86,7 @@
                     </tests>
                     <docs>
                         <homePage>${project.basedir}/README.md</homePage>
+                        <favicon>${project.basedir}/src/main/resources/favicon/bar-chart-small.png</favicon>
                     </docs>
                 </configuration>
             </plugin>
