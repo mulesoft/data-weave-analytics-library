@@ -12,7 +12,7 @@ import * from analytics::Statistics
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<Number&#62; | The values to pull statistics from
+* | `values` | `Array<Number&#62;` | The values to pull statistics from
 * |===
 *
 * === Example

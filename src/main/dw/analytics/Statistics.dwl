@@ -14,7 +14,7 @@
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | `values` | `Array<Number&#62`; | Array of numeric or null values.
+* | `values` | `Array<Number&#62;` | Array of numeric or null values.
 * |===
 *
 * === Example
@@ -190,7 +190,7 @@ fun frequencies(values: Null): Null = null
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | values | Array<T&#62; | Array of values to evaluate.
+* | `values` | `Array<T&#62;` | Array of values to evaluate.
 * |===
 *
 * === Example
