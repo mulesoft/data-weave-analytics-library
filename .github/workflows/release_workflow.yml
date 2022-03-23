@@ -36,7 +36,7 @@ jobs:
     with:
       server-id: exchange-prod-eu
       mvn-profile: prod-eu
-      exchange-org-id: 68ef9520-24e9-4cf2-b2f5-620025690913
+      exchange-org-id: e0b4a150-f59b-46d4-ad25-5d98f9deb24a
       environment: prod-eu
     secrets:
       EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
