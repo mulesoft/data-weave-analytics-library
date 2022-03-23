@@ -14,7 +14,7 @@ import * from analytics::Statistics
         },
         "Multiple elemnts array" in do {
             frequencies([1, 2, 11, 1, 1, 2]) must equalTo([
-                {value: 1, occurrences: 3},
+                {value: 1, occurrences: 2},
                 {value: 2, occurrences: 2},
                 {value: 11, occurrences: 1}
             ])
