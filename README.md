@@ -1,5 +1,7 @@
 # DataWeave Analytics Library
 
+[![Build & Test](https://github.com/mulesoft/data-weave-analytics-library/actions/workflows/test.yml/badge.svg)](https://github.com/mulesoft/data-weave-analytics-library/actions/workflows/test.yml)
+
 The DataWeave Analytics library provides a collection of simple functions
 intended to perform data analysis over datasets.
 DataWeave, which supports data transformations in multiple formats, is a
