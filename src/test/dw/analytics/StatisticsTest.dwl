@@ -10,7 +10,7 @@ import * from analytics::Statistics
             frequencies([]) must equalTo([])
         },
         "Unique element array" in do {
-            frequencies([1, 1, 1]) must equalTo([{value: 1, occurrences: 3}])
+            frequencies([1, 1, 1]) must equalTo([{value: 1, occurrences: 4}])
         },
         "Multiple elemnts array" in do {
             frequencies([1, 2, 11, 1, 1, 2]) must equalTo([
