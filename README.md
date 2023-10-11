@@ -36,7 +36,7 @@ The `CSVSummary` mapping produces the following JSON output from the CSV input:
       "4"
     ],
     "median": 2.5,
-    "stdev": 1.118033988749894848204586834365638,
+    "stdev": 1.118033988749895,
     "quartiles": [
       1.5,
       2.5,
