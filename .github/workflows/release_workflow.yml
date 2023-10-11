@@ -8,19 +8,19 @@ on:
 jobs:
   compile_test:
     uses: ./.github/workflows/test.yml
-  deploy_qax:
-    needs: compile_test
-    uses: ./.github/workflows/deploy.yml
-    with:
-      server-id: exchange-qax
-      mvn-profile: qax
-      exchange-org-id: 68ef9520-24e9-4cf2-b2f5-620025690913
-      environment: qax
-    secrets:
-      EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
-      EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
+#  deploy_qax:
+#    needs: compile_test
+#    uses: ./.github/workflows/deploy.yml
+#    with:
+#      server-id: exchange-qax
+#      mvn-profile: qax
+#      exchange-org-id: 68ef9520-24e9-4cf2-b2f5-620025690913
+#      environment: qax
+#    secrets:
+#      EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
+#      EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
   deploy_prod_us:
-    needs: deploy_qax
+    needs: compile_test
     uses: ./.github/workflows/deploy.yml
     with:
       server-id: exchange-prod-us
@@ -31,7 +31,7 @@ jobs:
       EXCHANGE_USERNAME: ${{ secrets.EXCHANGE_USERNAME }}
       EXCHANGE_PASSWORD: ${{ secrets.EXCHANGE_PASSWORD }}
   deploy_prod_eu:
-    needs: deploy_qax
+    needs: compile_test
     uses: ./.github/workflows/deploy.yml
     with:
       server-id: exchange-prod-eu
